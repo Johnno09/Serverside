@@ -1,48 +1,42 @@
+<%= form_with(model: mobile, local: true) do |form| %>
+  <% if mobile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mobile.errors.count, "error") %> prohibited this mobile from being saved:</h2>
 
-
-<button>Click to fade in boxes</button><br><br>
-
-    <div> 
-      <%= form_with(model: mobile, local: true) do |form| %>
-        <% if mobile.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(mobile.errors.count, "error") %> prohibited this mobile from being saved:</h2>
-      
-            <ul>
-            <% mobile.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            </ul>
-          </div>
-        <% end %>
-      
-        <div class="field">
-          <%= form.label :brand %>
-          <%= form.text_field :brand %>
-        </div>
-      
-        <div class="field">
-          <%= form.label :model %>
-          <%= form.text_field :model %>
-        </div>
-      
-        <div class="field">
-          <%= form.label :image_url %>
-          <%= form.text_field :image_url %>
-        </div>
-      
-        <div class="field">
-          <%= form.label :details %>
-          <%= form.text_field :details %>
-        </div>
-      
-        <div class="field">
-          <%= form.label :price %>
-          <%= form.text_field :price %>
-        </div>
-      
-        <div class="actions">
-          <%= form.submit %>
-        </div>
+      <ul>
+      <% mobile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
   </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_field :details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

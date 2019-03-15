@@ -1,0 +1,49 @@
+<body> <p id="notice"><%= notice %></p>
+
+
+
+ <div id="itemsContainer">
+  
+  <h1>Items</h1>
+  
+
+     
+     <% @mobiles.each do |mobile| %>
+      <div class="itemhols">
+       <h1 id="p1"><%= mobile.brand %></h1>
+       
+       <%= link_to (image_tag mobile.image_url, :class => "mobileholsIm"), mobile %>
+        <p><%= mobile.details %></p>
+       <p>Price <%= number_to_currency(mobile.price, :unit => "€") %>
+       <br>
+        Category: <%= mobile.model %>
+        <br>
+        
+       
+       <p>
+         <%= link_to 'Show',  mobile, :class => "button", :role => "button" %>
+         <%= link_to 'Edit',  edit_mobile_path(mobile), :class => "button", :role => "button" %>
+         <%= link_to 'Destroy',  mobile, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+       </p>
+        
+      </div>
+    <% end %>
+      
+
+      
+</div>
+
+
+<br>
+<%= link_to 'New mobile',  new_mobile_path, :class => "button", :role => "button" %>
+
+<script>
+$(document).ready(function(){
+  $("#p1").mouseenter(function(){
+    alert("click show items");
+  });
+});
+</script>
+
+
+</body>

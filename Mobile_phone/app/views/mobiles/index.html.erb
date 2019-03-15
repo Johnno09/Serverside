@@ -1,49 +1,73 @@
-<body> <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-
-
- <div id="itemsContainer">
+ <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px" id="itemsContainer">
   
-  <h1>Items</h1>
-  
-
+  <h1 class="mobile" >Items</h1>
      
      <% @mobiles.each do |mobile| %>
-      <div class="itemhols">
-       <h1 id="p1"><%= mobile.brand %></h1>
-       
-       <%= link_to (image_tag mobile.image_url, :class => "mobileholsIm"), mobile %>
-        <p><%= mobile.details %></p>
-       <p>Price <%= number_to_currency(mobile.price, :unit => "€") %>
-       <br>
-        Category: <%= mobile.model %>
-        <br>
-        
-       
-       <p>
-         <%= link_to 'Show',  mobile, :class => "button", :role => "button" %>
-         <%= link_to 'Edit',  edit_mobile_path(mobile), :class => "button", :role => "button" %>
-         <%= link_to 'Destroy',  mobile, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
-       </p>
-        
-      </div>
+         <div class="w3-row-padding w3-padding-16 w3-center" >
+          <div >
+               <h1 id=h1 ><%= mobile.brand %></h1>
+               <div style="width:100%">
+               <%= link_to (image_tag mobile.image_url, :class => "mobileimiages"), mobile %>
+                       <p><%= mobile.details %></p>
+                      <p>Price <%= number_to_currency(mobile.price, :unit => "€") %>
+                      <br>
+                       Category: <%= mobile.model %>
+                       <br>
+                
+               <div>
+                  <p>
+                    <%= link_to 'Show',  mobile, :class => "button", :role => "button" %>
+                    <%= link_to 'Edit',  edit_mobile_path(mobile), :class => "button", :role => "button" %>
+                    <%= link_to 'Destroy',  mobile, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+                  </p>
+               </div>   
+            </div>
+           </div>
+          </div>
     <% end %>
       
-
-      
 </div>
-
 
 <br>
 <%= link_to 'New mobile',  new_mobile_path, :class => "button", :role => "button" %>
 
 <script>
 $(document).ready(function(){
-  $("#p1").mouseenter(function(){
+  $("#h1").mouseenter(function(){
     alert("click show items");
   });
 });
 </script>
 
+<!-- page contect -->
 
-</body>
+<!--<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px"> -->
+
+  <!-- First Photo Grid-->
+<!--
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
+      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
+      <h3>Let Me Tell You About This Steak</h3>
+      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
+      <h3>Cherries, interrupted</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <p>What else?</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
+      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    </div>
+  </div> 
+ -->

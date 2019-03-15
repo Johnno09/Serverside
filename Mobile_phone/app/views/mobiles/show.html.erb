@@ -1,29 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="w3-row-padding w3-padding-16 w3-center" >
+
+ <div class="mobileimiages">
+    
+
+<p class="w3-row-padding w3-padding-16 w3-center">
   <strong>Brand:</strong>
   <%= @mobile.brand %>
 </p>
 
-<p>
+<p class="w3-row-padding w3-padding-16 w3-center">
   <strong>Model:</strong>
   <%= @mobile.model %>
 </p>
 
-<p>
+<p class="w3-row-padding w3-padding-16 w3-center" >
   <strong>Image url:</strong>
   <%= @mobile.image_url %>
 </p>
 
-<p>
+<p class="w3-row-padding w3-padding-16 w3-center" >
   <strong>Details:</strong>
   <%= @mobile.details %>
 </p>
 
-<p>
+<p class="w3-row-padding w3-padding-16 w3-center" >
   <strong>Price:</strong>
   <%= @mobile.price %>
 </p>
 
-<%= link_to 'Edit', edit_mobile_path(@mobile) %> |
-<%= link_to 'Back', mobiles_path %>
+<%= link_to 'Edit', edit_mobile_path(@mobile), :class => "button" %> |
+<%= link_to 'Back', mobiles_path, :class => "button" %>
+
+</div>
