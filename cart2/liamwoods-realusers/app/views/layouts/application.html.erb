@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | The New Golf Store</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <header class="headSec">
+            <h1>Wed Eve Golf Fun</h1>
+      
+      <ul>
+       
+        <li><%= link_to "Home", "/" %></li>
+        <li><%= link_to "Products", "/items" %></li>
+        <li><%= link_to "Help", help_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "View Cart", "/cart" %></li>
+        
+        
+        <% if user_signed_in? %>
+        <li><a href="#">Hi <%= current_user.email %></a></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+        
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <% end %>
+        
+        
+        <% if session[:login] == 1 %>
+               <li><%= link_to "Old Log Out", logout_path %></li>
+         <% else %>
+         
+             <li><%= link_to "Old Log In", login_path %></li>
+         <% end %>
+          
+        
+      </ul>
+      
+    </header>
+    <div class="container">
+    <%= yield %>
+    </div>
+    <footer class="foot">
+      
+      <h1>Look at the page footer</h1>
+      <a href="/cart/clear" class="button">Clear Cart</a>
+    </footer>
+    
+    
+    
+  </body>
+</html>
